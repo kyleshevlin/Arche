@@ -5,7 +5,7 @@ A front end starter kit for Sass and JavaScript
 ### Installation
 
 ```
-cp -R arche/ path/to/your/project
+cp -R source/ path/to/your/project
 ```
 
 ### Sass
