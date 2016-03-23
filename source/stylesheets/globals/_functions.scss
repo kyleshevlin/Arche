@@ -14,13 +14,9 @@
 
 // Z-indexes
 @function zi($index) {
-  @if variable-exists($z-indexes) {
-    @if map-has-key($z-indexes, $index) {
-      @return map-get($z-indexes, $index);
-    } @else {
-      @warn "The index '#{$index}' does not exist in the $z-indexes map.";
-    }
+  @if map-has-key($z-indexes, $index) {
+    @return map-get($z-indexes, $index);
   } @else {
-    @warn "Z-indexes map is not defined in the current scope.";
+    @warn "The index '#{$index}' does not exist in the $z-indexes map.";
   }
 }

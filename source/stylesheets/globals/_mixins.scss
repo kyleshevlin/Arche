@@ -4,16 +4,12 @@
 
 // Breakpoint
 @mixin bp($bp) {
-  @if variable-exists($breakpoints) {
-    @if map-has-key($breakpoints, $bp) {
-      @media #{inspect(map-get($breakpoints, $bp))} {
-        @content;
-      }
-    } @else {
-      @warn "The breakpoint '#{$bp}' is not in the $breakpoints map.";
+  @if map-has-key($breakpoints, $bp) {
+    @media #{inspect(map-get($breakpoints, $bp))} {
+      @content;
     }
   } @else {
-    @warn "The $breakpoints map is not defined in this scope.";
+    @warn "The breakpoint '#{$bp}' is not in the $breakpoints map.";
   }
 }
 
